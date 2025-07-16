@@ -1,0 +1,22 @@
+{
+  "name": "todo-django",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T-supernatural/todo-django.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/T-supernatural/todo-django/issues"
+  },
+  "homepage": "https://github.com/T-supernatural/todo-django#readme"
+}
