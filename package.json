@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/T-supernatural/todo-django/issues"
   },
-  "homepage": "https://github.com/T-supernatural/todo-django#readme"
+  "homepage": "https://github.com/T-supernatural/todo-django#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
 }
