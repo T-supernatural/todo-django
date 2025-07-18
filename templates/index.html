@@ -7,8 +7,7 @@
     <link href="{% static "src/output.css" %}" rel="stylesheet">
     <title>{% block title %} Todo Django {% endblock title %}</title>
   </head>
-  <body class="bg-gray-300">
-    {% include "navbar.html" %}
-    {% block content %} {% endblock content %}
+  <body class="bg-gray-100 font-sans">
+    {% include "navbar.html" %} {% block content %} {% endblock content %}
   </body>
 </html>
