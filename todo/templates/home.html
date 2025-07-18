@@ -2,5 +2,29 @@
 {% load static %}
 {% block title %}{% endblock title %}
 {% block content %}
-<h1 class="text-5xl text-red-600 bg-amber-500 capitalize">My name is tinuade michael</h1>
+
+<div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow p-4 flex flex-col">
+        <h2 class="text-lg font-semibold mb-4">Menu</h2>
+
+        <!-- Tasks -->
+        <div class="mb-6">
+            <h3 class="font-medium mb-2">Tasks</h3>
+            <ul class="space-y-2">
+                <li class="text-shadow-gray-600 font-semibold">Today<span class="text-shadow-gray-400">(5)</span></li>
+                <li class="text-shadow-gray-600">Upcoming</li>
+                <li class="text-shadow-gray-600">Calendar</li>
+                <li class="text-shadow-gray-600">Sticky Wall</li>
+            </ul>
+        </div>
+
+        <!-- Lists -->
+        <div></div>
+    </aside>
+
+</div>
+
+
 {% endblock content %}
