@@ -7,3 +7,12 @@ def home_page(request):
         'tasks': Task.objects.all(),
     }
     return render(request, 'home.html', context)
+
+def add_form(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        Task.objects.create(title=title, description=description)
+        return redirect('home')
+    
+    return render(request, 'add.html')

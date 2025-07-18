@@ -1,0 +1,46 @@
+Add new task
+open form
+form includes:
+title
+description
+date
+tag
+
+click on today
+show todays task
+click on one task
+show dialog box
+- view details
+- update
+- delete
+- completed
+
+click upcoming
+show upcoming tasks
+click on one task
+show dialog box
+- view details
+- update
+- delete
+
+click previous
+show previous tasks
+click on one task
+show dialog box
+- view details
+
+click completed
+show completed tasks
+click on one task
+show dialog box
+- view details
+
+click calendar
+show calendar
+
+click note
+show note
+
+update
+show form
+title, description, date, tag

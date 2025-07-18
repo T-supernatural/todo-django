@@ -1,60 +1,17 @@
-{% include "index.html" %}
+{% extends "index.html" %}
 {% load static %}
 {% block title %}{% endblock title %}
 {% block content %}
 
 
 <div class="flex h-screen">
-    <!-- Sidebar -->
-    <div class="w-64 bg-gray-50 p-4 border-r border-gray-200">
-        <h2 class="text-lg font-semibold mb-4">Menu</h2>
-        <div class="space-y-2">
-            <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Q. search</button>
-            <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Upcoming</button>
-            <button class="w-full text-left p-2 bg-gray-200 rounded">Today</button>
-            <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Calendar</button>
-            <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Sticky Wall</button>
-        </div>
-        <div class="mt-4">
-            <h3 class="text-sm font-medium mb-2">LISTS</h3>
-            <div class="space-y-1">
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded flex items-center justify-between">
-                    <span class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                        Personal</span>
-                    <span>5</span>
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded flex items-center justify-between">
-                    <span class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                        Work</span>
-                    <span>8</span>
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded flex items-center justify-between">
-                    <span class="flex items-center"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
-                        List 1</span>
-                    <span>3</span>
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">+ Add New List</button>
-            </div>
-        </div>
-        <div class="mt-4">
-            <h3 class="text-sm font-medium mb-2">TAGS</h3>
-            <div class="space-y-1">
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded flex items-center">
-                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> Tag 1
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded flex items-center">
-                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span> Tag 2
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">+ Add Tag</button>
-            </div>
-        </div>
-    </div>
+    {% include "sidebar.html" %}
 
     <!-- Main Content -->
     <div class="flex-1 p-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold">Today <span class="text-gray-500">5</span></h1>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded">+ Add New Task</button>
+            <a href={% url "add" %} class="bg-blue-500 text-white px-4 py-2 rounded">+ Add New Task</a>
         </div>
         <div class="grid grid-cols-2 gap-6">
             <!-- Task List -->
@@ -72,43 +29,7 @@
                 <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Print business card</button>
             </div>
 
-            <!-- Task Details -->
-            <div class="bg-white p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-4">Task: Renew driver's license</h2>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Description</label>
-                        <p class="mt-1 text-gray-600">Renew driver's license before it expires.</p>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">List</label>
-                        <select class="mt-1 block w-full p-2 border rounded">
-                            <option>Personal</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Due date</label>
-                        <input type="date" class="mt-1 block w-full p-2 border rounded" value="2025-10-22">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Tags</label>
-                        <div class="mt-1 flex space-x-2">
-                            <span
-                                class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">Tag
-                                1</span>
-                            <button class="text-gray-500 hover:text-gray-700">+ Add Tag</button>
-                        </div>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input type="checkbox" id="subtask1" class="mt-1">
-                        <label for="subtask1">Subtask</label>
-                    </div>
-                    <div class="flex justify-end space-x-2">
-                        <button class="px-4 py-2 bg-yellow-500 text-white rounded">Delete Task</button>
-                        <button class="px-4 py-2 bg-green-500 text-white rounded">Save changes</button>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
