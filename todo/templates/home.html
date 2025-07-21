@@ -13,21 +13,12 @@
             <h1 class="text-2xl font-bold">Today <span class="text-gray-500">5</span></h1>
             <a href={% url "add" %} class="bg-blue-500 text-white px-4 py-2 rounded">+ Add New Task</a>
         </div>
-        <div class="grid grid-cols-2 gap-6">
+        <div class="flex flex-col gap-5">
+
             <!-- Task List -->
-            <div class="space-y-2">
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Research content ideas</button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Create a database of guest
-                    authors</button>
-                <button class="w-full text-left p-2 bg-red-100 rounded flex items-center justify-between">
-                    <span>Renew driver's license</span>
-                    <span class="text-red-500">Personal</span>
-                </button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Consult accountant</button>
-                <button class="w-full text-left p-2 bg-yellow-100 rounded flex items-center">List <span
-                        class="text-yellow-500">Subtasks</span></button>
-                <button class="w-full text-left p-2 hover:bg-gray-200 rounded">Print business card</button>
-            </div>
+            {% for t in tasks %}
+            <p class="w-96 text-left p-2 hover:bg-gray-200 rounded">{{t.title}}</p>
+           {% endfor %}
 
             
         </div>

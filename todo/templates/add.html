@@ -1,50 +1,64 @@
 {% extends "index.html" %} {% load static %} {% block content %}
-<!-- Task Details -->
-<div class="bg-white p-4 rounded shadow">
-  <h2 class="text-lg font-semibold mb-4">Task: Renew driver's license</h2>
-  <div class="space-y-4">
-    <div>
-      <label class="block text-sm font-medium text-gray-700">Description</label>
-      <p class="mt-1 text-gray-600">
-        Renew driver's license before it expires.
-      </p>
-    </div>
-    <div>
-      <label class="block text-sm font-medium text-gray-700">List</label>
-      <select class="mt-1 block w-full p-2 border rounded">
-        <option>Personal</option>
-      </select>
-    </div>
-    <div>
-      <label class="block text-sm font-medium text-gray-700">Due date</label>
-      <input
-        type="date"
-        class="mt-1 block w-full p-2 border rounded"
-        value="2025-10-22"
-      />
-    </div>
-    <div>
-      <label class="block text-sm font-medium text-gray-700">Tags</label>
-      <div class="mt-1 flex space-x-2">
-        <span
-          class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded"
-          >Tag 1</span
-        >
-        <button class="text-gray-500 hover:text-gray-700">+ Add Tag</button>
-      </div>
-    </div>
-    <div class="flex space-x-2">
-      <input type="checkbox" id="subtask1" class="mt-1" />
-      <label for="subtask1">Subtask</label>
-    </div>
-    <div class="flex justify-end space-x-2">
-      <button class="px-4 py-2 bg-yellow-500 text-white rounded">
-        Delete Task
-      </button>
-      <button class="px-4 py-2 bg-green-500 text-white rounded">
-        Save changes
-      </button>
-    </div>
+<!-- Form -->
+<form method="post" enctype="multipart/form-data" class="p-6 space-y-6">
+  {% csrf_token %}
+  <!-- Title Field -->
+  <div class="space-y-2">
+    <label for="title" class="block text-sm font-medium text-gray-700"
+      >Task Title</label
+    >
+    <input
+      type="text"
+      id="title"
+      name="title"
+      value="{{ task.title }}"
+      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+    />
   </div>
-</div>
+
+  <!-- Description Field -->
+  <div class="space-y-2">
+    <label for="description" class="block text-sm font-medium text-gray-700"
+      >Description</label
+    >
+    <textarea
+      id="description"
+      name="description"
+      rows="4"
+      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+    >
+{{ task.description }}</textarea
+    >
+  </div>
+
+  <!-- Date Field -->
+  <div class="space-y-2">
+    <label for="price" class="block text-sm font-medium text-gray-700"
+      >Date</label
+    >
+    <input
+      type="date"
+      id="price"
+      name="price"
+      value="{{ task.date }}"
+      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+    />
+  </div>
+
+  <!-- Form Actions -->
+  <div class="flex items-center justify-end space-x-4 pt-6">
+    <a
+      href="/"
+      class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+    >
+      Cancel
+    </a>
+    <button
+      type="submit"
+      class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    >
+      Update Task
+    </button>
+  </div>
+</form>
 {% endblock content %}
