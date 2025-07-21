@@ -1,64 +1,10 @@
-{% extends "index.html" %} {% load static %} {% block content %}
-<!-- Form -->
-<form method="post" enctype="multipart/form-data" class="p-6 space-y-6">
-  {% csrf_token %}
-  <!-- Title Field -->
-  <div class="space-y-2">
-    <label for="title" class="block text-sm font-medium text-gray-700"
-      >Task Title</label
-    >
-    <input
-      type="text"
-      id="title"
-      name="title"
-      value="{{ task.title }}"
-      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-    />
-  </div>
-
-  <!-- Description Field -->
-  <div class="space-y-2">
-    <label for="description" class="block text-sm font-medium text-gray-700"
-      >Description</label
-    >
-    <textarea
-      id="description"
-      name="description"
-      rows="4"
-      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-    >
-{{ task.description }}</textarea
-    >
-  </div>
-
-  <!-- Date Field -->
-  <div class="space-y-2">
-    <label for="price" class="block text-sm font-medium text-gray-700"
-      >Date</label
-    >
-    <input
-      type="date"
-      id="price"
-      name="price"
-      value="{{ task.date }}"
-      class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-    />
-  </div>
-
-  <!-- Form Actions -->
-  <div class="flex items-center justify-end space-x-4 pt-6">
-    <a
-      href="/"
-      class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
-    >
-      Cancel
-    </a>
-    <button
-      type="submit"
-      class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-    >
-      Update Task
-    </button>
-  </div>
-</form>
-{% endblock content %}
+<!-- templates/tasks/create_task.html -->
+{% extends 'index.html' %}
+{% block content %}
+  <h2>Add New Task</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+{% endblock %}
